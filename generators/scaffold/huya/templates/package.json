@@ -1,0 +1,17 @@
+{
+  "name": "<%= name %>",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "gulp server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-devserver": "^0.6.2",
+    "gulp-fed-fem": "^1.0.1"
+  }
+}
