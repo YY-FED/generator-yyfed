@@ -1,3 +1,6 @@
 module.exports = {
-    '虎牙': require('./huya')
+    'huya': {
+        name: '虎牙',        
+        modules: require('./huya')
+    }
 }

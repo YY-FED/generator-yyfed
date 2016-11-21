@@ -20,10 +20,10 @@ var dd = generators.Base.extend({
         }
 
         // 遍历项目加入到可选项中
-        Object.keys(scaffold).forEach(function(name, idx){
+        Object.keys(scaffold).forEach(function(pkg){
             this.scaffoldOpts.push({
-                name,
-                value: name
+                name: scaffold[pkg]['name'],
+                value: pkg
             });
         }.bind(this));
     },
@@ -36,12 +36,14 @@ var dd = generators.Base.extend({
                 choices: this.scaffoldOpts,
                 store: true
             }]).then(function(app){
+                console.log('sdfsdfdsf', app);
                 this.opts.appname = app.appname;
                 resolve();
             }.bind(this));
         }.bind(this));
     },
     default: function(){
+        console.log(23123123123, this.opts)
         this.composeWith(`fed:${ this.opts.appname }`, {
             arguments: this.folder
         }, {
