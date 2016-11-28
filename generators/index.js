@@ -7,17 +7,17 @@ const copydir = require('copy-dir');
 
 const scaffold = require('./scaffold');
 
-var dd = generators.Base.extend({
+module.exports = generators.Base.extend({
     initializing: function(){
         this.scaffoldOpts = [];
         this.opts = {};
 
         // 目录名检测
         this.argument('folder', { type: String, required: true });
-        if(fs.existsSync(this.destinationPath(this.folder))){
-            this.log(chalk.bgRed.bold.white(`项目名 ${ this.folder } 已存在，请更换其他名字。`));
-            process.exit(0);
-        }
+        // if(fs.existsSync(this.destinationPath(this.folder))){
+        //     this.log(chalk.bgRed.bold.white(`项目名 ${ this.folder } 已存在，请更换其他名字。`));
+        //     process.exit(0);
+        // }
 
         // 遍历项目加入到可选项中
         Object.keys(scaffold).forEach(function(pkg){
@@ -52,5 +52,3 @@ var dd = generators.Base.extend({
         // console.log('安装基础依赖');
     }
 });
-
-module.exports = dd;

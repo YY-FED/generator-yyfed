@@ -1,3 +1,4 @@
 module.exports = {
-    'huya': '虎牙'
+    'huya': '虎牙',
+    'v5': '微吾'
 }
