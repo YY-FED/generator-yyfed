@@ -63,5 +63,5 @@ module.exports = app.listen(port, function (err) {
   }
   var uri = 'http://0.0.0.0:' + port
   console.log('Listening at ' + uri + '\n')
-  opn(uri,{app:['google chrome', '--incognito']})
+  opn(uri,{app:['chrome', '--incognito']})
 })

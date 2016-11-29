@@ -106,6 +106,6 @@ module.exports = yeoman.Base.extend({
         }
     },
     end: function(){
-        console.log('huya end');
+        console.log('V5 end');
     }
 });
