@@ -39,15 +39,9 @@ module.exports = yeoman.Base.extend({
                 message: '请选择js预编译类型',
                 choices: [{name: '不使用js预编译', value: 'none'}, {name: 'babeljs', value: 'babeljs'}],
                 store: true
-            }, {
-                type: 'list',
-                name: 'csscompile',
-                message: '请选择css预编译类型',
-                choices: [{name: '不使用css预编译', value: 'none'}, {name: 'SASS', value: 'sass'}],
-                store: true
             }]).then(function(args){
                 this.opts = Object.assign(this.opts, args);
-                console.log(111, this.opts);
+                // console.log("config", this.opts);
                 resolve();
             }.bind(this));
         }.bind(this));
@@ -65,7 +59,6 @@ module.exports = yeoman.Base.extend({
         templates: function(){
             // 复制项目模板
             copydir.sync(this.templatePath(), this.destinationPath(this.folder), function(stat, filepath, filename){
-                // package.json 文件不复制
                 if(filename === 'package.json'){
                     return false;
                 }
@@ -77,7 +70,8 @@ module.exports = yeoman.Base.extend({
             this.templatePath('package.json'),
             this.destinationPath(this.folder, 'package.json'),
                 {
-                    name: this.folder
+                    name: this.folder,
+                    buildConfig: JSON.stringify(this.opts)
                 }
             );
         },
