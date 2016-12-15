@@ -1,7 +1,6 @@
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
     changed = require('gulp-changed'),
-    watch = require('gulp-watch'),
     browserSync = require('browser-sync').create(),
     reload = browserSync.reload,
     htmlMin = require('gulp-htmlmin'),
