@@ -8,9 +8,6 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),//压缩
     sourcemaps = require('gulp-sourcemaps'),
     autoprefixer = require('gulp-autoprefixer'), // css前缀
-    del = require('del'),
-    path = require('path'),
-    copy = require('copy'),
     imageMin = require('gulp-imagemin'),
     rev = require('gulp-rev'),//更改版本名
     revCollector = require('gulp-rev-collector'),// gulp-rev的插件，用于html模板更改
@@ -31,6 +28,7 @@ var paths={
        dir: './dev',
        css: './dev/css',
        js:  './dev/js',
+       imgs: './dev/imgs',
        html: './dev'
     },
     dist:{
@@ -75,7 +73,7 @@ gulp.task('devCSS',['devSass'],function(){
 gulp.task('devImgs',function(){
      return gulp.src(paths.src.imgs)
             .pipe(changed(paths.dev.imgs))
-            .pipe(copy(paths.src.imgs,paths.dev.imgs))
+            .pipe(gulp.dest(paths.dev.imgs))
             .pipe(reload({stream: true}));
 });
 
