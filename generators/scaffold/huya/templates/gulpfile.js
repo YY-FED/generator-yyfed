@@ -1,7 +1,6 @@
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
     changed = require('gulp-changed'),
-    watch = require('gulp-watch'),
     browserSync = require('browser-sync').create(),
     reload = browserSync.reload,
     htmlMin = require('gulp-htmlmin'),
@@ -9,16 +8,13 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),//压缩
     sourcemaps = require('gulp-sourcemaps'),
     autoprefixer = require('gulp-autoprefixer'), // css前缀
-    connect = require('gulp-connect'),
     del = require('del'),
     path = require('path'),
     copy = require('copy'),
     imageMin = require('gulp-imagemin'),
     rev = require('gulp-rev'),//更改版本名
-    rename = require('gulp-rename'),//重新命名
     revCollector = require('gulp-rev-collector'),// gulp-rev的插件，用于html模板更改
     plumber = require('gulp-plumber'),//用于错误处理
-    clean = require('gulp-clean'),//删除文件
     publishPath = 'G:/root/huya_assets/a_dwstatic_huya/hd.huya.com/test';
 
 
