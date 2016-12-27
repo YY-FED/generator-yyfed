@@ -73,7 +73,8 @@ module.exports = yeoman.Base.extend({
         package: function(){
             this.installDependencies({
                 bower: false,
-                npm: true,
+                npm: false,
+                yarn: true,
                 callback: function(){
                     this.log(chalk.green.bold('项目依赖已安装完成!'));
                 }.bind(this)
