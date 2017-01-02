@@ -112,9 +112,7 @@ gulp.task('pubCSS',function(){
      
      var cssSourcePath  = paths.src.css+'/*.css';
      return gulp.src(cssSourcePath)
-                .pipe(sourcemaps.init())
                 .pipe(minifyCSS(options))
-                .pipe(sourcemaps.write())
                 .pipe(rev())//文件名添加md5后缀                 
                 .pipe(gulp.dest(paths.dist.css))
                 .pipe(rev.manifest())                     //- 生成一个rev-manifest.json
