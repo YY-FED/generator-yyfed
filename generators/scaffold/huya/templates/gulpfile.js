@@ -12,7 +12,7 @@ var gulp = require('gulp'),
     rev = require('gulp-rev'),//更改版本名
     revCollector = require('gulp-rev-collector'),// gulp-rev的插件，用于html模板更改
     plumber = require('gulp-plumber'),//用于错误处理
-    publishPath = 'G:/root/huya_assets/a_dwstatic_huya/hd.huya.com/test';
+    publishPath = 'G:/root/huya_assets/test_dwstatic_huya/hd/test';
 
 
 // 文件目录路径
